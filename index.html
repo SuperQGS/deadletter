@@ -1,0 +1,99 @@
+<html>
+    
+    <style>
+        .action-panel {
+            display: none;
+        }
+
+        li {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+
+
+        body {
+        margin: 0;
+        overflow: hidden;
+        }
+
+        #graph-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: grey;
+        }
+
+        .node {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #3498db;
+        border-radius: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 1;
+        text-align: center;
+        }
+
+        .link {
+        position: absolute;
+        background-color: black;
+        z-index: 0;
+        }
+    </style>
+
+    <body>
+
+        <h1 id = "current-location"></h1>
+
+        <h3 id="coyotes-here"></h3>
+
+        <hr>
+
+        <h2 id = "actions-remaining"></h2>
+
+        <button onclick = "actionPanel('drive')">Drive</button>
+        <button onclick = "actionPanel('honk')">Honk</button>
+        <button onclick = "actionPanel('headlights')">Headlights</button>
+        <button onclick = "actionPanel('items')">Items</button>
+        <button>Deliver?</button>
+
+        <div id = "drive-panel" class = "action-panel">
+            <h3>Drive To: (takes 1 action)</h3>
+            <ul id = "drive-options"></ul>
+        </div>
+        
+        <div id = "honk-panel" class = "action-panel">
+            <h3>Scare Coyotes Away With Horn: (takes 1 action)</h3>
+            <li onclick = "honk()">HONK</li>
+        </div>
+
+        <div id = "headlights-panel" class = "action-panel">
+            <h3>Kill Blight With Headlights: (takes 1 action)</h3>
+            <ul id = "unblight-options"></ul>
+        </div>
+
+        <div id = "items-panel" class = "action-panel">
+            <h3>Use Item: (takes 1 action)</h3>
+            <ul id = "item-options"></ul>
+        </div>
+        
+        <hr>
+        <h3>County Map</h3>
+        <div id="graph-container"></div>
+
+    </body>
+
+    <script src="mapdata.js"></script>
+    <script src="node-link-navigation.js"></script>
+    <script src="world-actions.js"></script>
+    <script src="player-actions.js"></script>
+    <script src="graph.js"></script>
+</html>
