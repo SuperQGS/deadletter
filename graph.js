@@ -46,7 +46,7 @@ Object.values(links).forEach(link => {
     if (sourceNode && targetNode) {
       const linkElement = document.createElement('div');
       linkElement.className = 'link';
-      linkElement.style.width = '4px';
+      linkElement.style.width = '10px';
       linkElement.style.height = `${getDistance(sourceNode, targetNode)}px`;
       linkElement.style.backgroundColor = blightColors[link.blight];
   

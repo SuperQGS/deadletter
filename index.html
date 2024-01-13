@@ -11,6 +11,9 @@
             cursor: pointer;
             margin-top: 5px;
         }
+        li:hover {
+            color: red;
+        }
 
 
 
@@ -24,6 +27,12 @@
         width: 100vw;
         height: 100vh;
         background-color: grey;
+        filter: blur(4px);
+        transition: filter 0.3s ease;
+        }
+
+        #graph-container:hover {
+            filter: blur(0px);
         }
 
         .node {
@@ -47,6 +56,10 @@
         background-color: black;
         z-index: 0;
         }
+
+        .link:hover, .node:hover {
+            background-color: white !important;
+        }
     </style>
 
     <body>
@@ -58,6 +71,7 @@
         <hr>
 
         <h2 id = "actions-remaining"></h2>
+        <div>test</div>
 
         <button onclick = "actionPanel('drive')">Drive</button>
         <button onclick = "actionPanel('honk')">Honk</button>
